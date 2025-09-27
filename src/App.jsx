@@ -9,7 +9,7 @@ function filterMoviesByQuery(movies, query) {
   const queryToLowerCase = query.toLowerCase();
 
   return movies.filter(
-    ({ title, description }) =>
+    ({ title = '', description = '' }) =>
       title.toLowerCase().includes(queryToLowerCase) ||
       description.toLowerCase().includes(queryToLowerCase),
   );
@@ -23,7 +23,6 @@ export const App = () => {
     <div className="page">
       <div className="page-content">
         <Header
-          querry={query}
           filterBy={newQuery => {
             setQuery(newQuery);
           }}
