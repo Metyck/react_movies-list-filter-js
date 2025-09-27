@@ -13,8 +13,8 @@ export const Header = ({ filterBy }) => {
             id="search-query"
             className="input"
             placeholder="Type search word"
-            onChange={(event) => {
-              filterBy(event.currentTarget.value.replace(/^\s+|\s+$/g, ''));
+            onChange={event => {
+              filterBy(event.currentTarget.value.trim());
             }}
           />
         </div>
